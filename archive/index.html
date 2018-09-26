@@ -1,28 +1,36 @@
----
-layout: page
+--- 
+layout: page 
 title: Archive
 ---
+<style type="text/css">
+    .categories{
+        float: right;
+        color: #999
+    }
+</style>
 
 <ul>
-  {%for post in paginator.posts %}
+    {%for post in paginator.posts %}
     <div class="arch-item">
-      <li>
-        <a href="{{ post.url | prepend: site.baseurl }}" class="arch-title">{{ post.title }}</a>
-        <time>{{ post.date | date:"%b.%d, %Y" }}</time>
-      </li>
-      {% if post.description %}<div class="arch-desc">{{ post.description }}</div>{% endif %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}" class="arch-title">{{ post.title }}</a>
+            <time>{{ post.date | date:"%b.%d, %Y" }}</time> <div class="categories">카테고리 : {{post.categories}}</div>
+        </li>
+        {% if post.description %}
+        <div class="arch-desc">{{ post.description }}</div>{% endif %}
+        <hr>
     </div>
-  {% endfor %}
+    {% endfor %}
 </ul>
 
-    <nav class="blocks blocks--space">
-      <div class="blocks__item">
+<nav class="blocks blocks--space">
+    <div class="blocks__item">
         {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}">Previous</a>{% endif %}
-      </div>
-      <div class="blocks__item">
+    </div>
+    <div class="blocks__item">
         Page: {{ paginator.page }} of {{ paginator.total_pages }}
-      </div>
-      <div class="blocks__item">
+    </div>
+    <div class="blocks__item">
         {% if paginator.next_page %}<a href="{{ paginator.next_page_path }}">Next</a>{% endif %}
-      </div>
-    </nav>
+    </div>
+</nav>

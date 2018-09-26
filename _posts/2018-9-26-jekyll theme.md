@@ -2,7 +2,7 @@
 layout: post
 title: "blog 생성기"
 date: 2018-9-26 17:13:17 +0800
-categories: practical training
+categories: 실습
 location: Seoul, Korea
 description: songroger, jekyll theme사용
 ---
