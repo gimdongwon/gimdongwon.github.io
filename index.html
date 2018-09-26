@@ -1,14 +1,19 @@
 ---
 layout: default
 ---
-
+<style type="text/css">
+    .categories{
+        float: right;
+        color: #999
+    }
+</style>
   {% for post in site.posts limit:3 %}
     <!-- article -->
     <article class="article">
       <h2 class="article__title">
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
-      <time class="article__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <time class="article__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%b %-d, %Y" }}</time> <div class="categories">categories : {{post.categories}}</div>
       <p class="article__excerpt">{{ post.description | truncate: 160 }}</p>
       
     </article>
