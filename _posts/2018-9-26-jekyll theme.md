@@ -1,5 +1,4 @@
 ---
----
 layout: post
 title: "blog 생성기"
 date: 2018-9-26 17:13:17 +0800
