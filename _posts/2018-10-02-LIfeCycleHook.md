@@ -13,7 +13,7 @@ tail: I'm a front developer
 
 # 라이프사이클
 
-## 컴포넌트 초기생성
+## 1. 컴포넌트 초기생성
 
 일단 컴포넌트가 브라우저에 나타나기 전,후에 호출되는 API 들이 있다.
 
@@ -27,7 +27,7 @@ tail: I'm a front developer
 
 이 API 는 컴포넌트가 화면에 나타나게 되었을 때 호출된다. DOM 을 사용해야하는 외부 라이브러리를 연동하거나 해당 컴포넌트에서 필요로 하는 데이터를 요청하기 위해 axios, fetch 등 ajax 요청을 하거나 DOM 의 속성을 읽거나 직접 변경하는 작업을 진행한다.
 
-## 컴포넌트 업데이트
+## 2. 컴포넌트 업데이트
 
 컴포넌트 업데이트는 props 의 변화, 그리고 state 의 변화에 따라 결정된다. 업데이트가 되기 전과 그리고 된 후에 어떠한 API 가 호출 되는지 살펴보자.
 
@@ -89,7 +89,7 @@ componentDidUpdate(prevProps, prevState, snapshot){
 
 이 API 는 커포넌트에서 render()를 호출하고 난 다음에 발생하게 된다. 이 시점에선 this.props 와 this.state 가 바뀌었다. 그리고 파라미터를 통해 이전의 값인 prevProps 와 prevState 를 조회할 수 있다. 그리고 getSnapshotBeforeUpdate 에서 변환한 snapshot 값은 세번째 값으로 받아온다.
 
-## 컴포넌트 제거
+## 3. 컴포넌트 제거
 
 ### componentWillUnmount
 
